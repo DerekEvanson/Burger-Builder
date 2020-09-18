@@ -95,11 +95,11 @@ class BurgerBuilder extends Component {
 		//     ingredients: this.state.ingredients,
 		//     price: this.state.totalPrice,
 		//     customer: {
-		//         name: 'Max Schwarzmüller',
+		//         name: 'Derek',
 		//         address: {
-		//             street: 'Teststreet 1',
+		//             street: 'Short Street',
 		//             zipCode: '41351',
-		//             country: 'Germany'
+		//             zip: 'ND'
 		//         },
 		//         email: 'test@test.com'
 		//     },
@@ -120,6 +120,7 @@ class BurgerBuilder extends Component {
 					encodeURIComponent(this.state.ingredients[i]),
 			);
 		}
+		queryParams.push('price=' + this.state.totalPrice);
 		const queryString = queryParams.join('&');
 		this.props.history.push({
 			pathname: '/checkout',
