@@ -18,17 +18,16 @@ class BurgerBuilder extends Component {
 		error: false,
 	};
 
-	// Removing asynchronous code for later WIP TEMP
 	componentDidMount() {
 		console.log(this.props);
-		// axios
-		// 	.get('https://a-react-burger.firebaseio.com/ingredients.json')
-		// 	.then((response) => {
-		// 		this.setState({ ingredients: response.data });
-		// 	})
-		// 	.catch((error) => {
-		// 		this.setState({ error: true });
-		// 	});
+		axios
+			.get('https://a-react-burger.firebaseio.com/ingredients.json')
+			.then((response) => {
+				this.setState({ ingredients: response.data });
+			})
+			.catch((error) => {
+				this.setState({ error: true });
+			});
 	}
 
 	updatePurchaseState(ingredients) {
